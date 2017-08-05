@@ -23,6 +23,8 @@ export class PhotosComponent implements OnInit {
    * Input params
    */
   @Input() parentSearch = '';
+  @Input() albumID;
+  @Input() isParentSearch = false;
 
   /**
    * Photos
@@ -128,6 +130,7 @@ export class PhotosComponent implements OnInit {
     this.preloader = true;
     return this.photoService.getPhotoes()
     .then(photos => {
+      photos = photos.filter((photo) => !this.albumID || photo.albumId === this.albumID);
       this.allPhotos = photos;
       this.filter();
       this.preloader = false;

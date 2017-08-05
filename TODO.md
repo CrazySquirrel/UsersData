@@ -5,28 +5,26 @@
   - [ ] Add advanced search
   - [x] Add pagination
   
-- [ ] Create user detail page
-  - [ ] Add block with albums/photos
+- [x] Create user detail page
+  - [x] Add block with albums/photos
   
 - [X] Create albums list
   - [x] Add search
   - [x] Add pagination
   
-- [ ] Create album detail page
+- [x] Create album detail page
 
 - [x] Create photos list
   - [x] Add search
   - [x] Add pagination
 
-- [ ] Create search page
+- [x] Create search page
 
 - [ ] Add offline support
 
 - [ ] Add share support
 
 - [ ] Add wai-aria support
-
-- [ ] Add search to pages and blocks
 
 - [ ] Add posts
   - [ ] Add comments

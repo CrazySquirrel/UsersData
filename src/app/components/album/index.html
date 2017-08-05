@@ -1,2 +1,17 @@
+<ng-container *ngIf="!preloader">
+  <md-card>
+    <md-card-header>
+      <md-card-title>{{album.title}}</md-card-title>
+    </md-card-header>
+    <md-card-content>
+      <div class="debox">
+        <photos [albumID]="album.id"></photos>
+      </div>
+    </md-card-content>
+    <md-card-actions>
+      <button data-class="back" md-button (click)="goBack()">Back</button>
+    </md-card-actions>
+  </md-card>
+</ng-container>
 
-
+<md-spinner *ngIf="preloader"></md-spinner>

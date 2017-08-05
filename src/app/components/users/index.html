@@ -1,5 +1,5 @@
-<ng-container *ngIf="!preloader">
-  <div class="box">
+<ng-container *ngIf="!preloader && pageEvent.length>0">
+  <div class="box" *ngIf="!isParentSearch">
     <md-input-container class="full-width">
       <input mdInput name="search" placeholder="Search" value="" [(ngModel)]="search"
              (keyup)="doSearch()">

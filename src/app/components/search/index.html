@@ -1,2 +1,9 @@
-
-
+<div class="box">
+  <md-input-container class="full-width">
+    <input mdInput name="search" placeholder="Search" value="" [(ngModel)]="search"
+           (keyup)="users.doSearch();albums.doSearch();photos.doSearch();">
+  </md-input-container>
+</div>
+<users #users [parentSearch]="search" [isParentSearch]="true"></users>
+<albums #albums [parentSearch]="search" [isParentSearch]="true"></albums>
+<photos #photos [parentSearch]="search" [isParentSearch]="true"></photos>

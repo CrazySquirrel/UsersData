@@ -36,9 +36,13 @@ body {
   width: 100%;
 }
 
-.box{
+.box {
   box-sizing: border-box;
   padding: 0 24px;
+}
+
+.debox {
+  margin: 0 -24px;
 }
 
 .link {

@@ -20,6 +20,7 @@ export class UsersComponent implements OnInit {
    * Input params
    */
   @Input() parentSearch = '';
+  @Input() isParentSearch = false;
 
   /**
    * Users

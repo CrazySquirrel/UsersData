@@ -20,6 +20,8 @@ export class AlbumsComponent implements OnInit {
    * Input params
    */
   @Input() parentSearch = '';
+  @Input() userID;
+  @Input() isParentSearch = false;
 
   /**
    * Albums
@@ -125,6 +127,7 @@ export class AlbumsComponent implements OnInit {
     this.preloader = true;
     return this.albumService.getAlbumes()
     .then(albums => {
+      albums = albums.filter((album) => !this.userID || album.userId === this.userID);
       this.allAlbums = albums;
       this.filter();
       this.preloader = false;
