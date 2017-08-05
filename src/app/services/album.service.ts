@@ -9,7 +9,7 @@ import {Album} from '../models/album';
 export class AlbumService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private albumsUrl = '//jsonplaceholder.typicode.com/albums';
+  private albumsUrl = 'https://jsonplaceholder.typicode.com/albums';
 
   constructor(private http: Http) {
   }

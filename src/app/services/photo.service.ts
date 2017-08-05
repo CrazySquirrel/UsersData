@@ -9,7 +9,7 @@ import {Photo} from '../models/photo';
 export class PhotoService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private photosUrl = '//jsonplaceholder.typicode.com/photos';
+  private photosUrl = 'https://jsonplaceholder.typicode.com/photos';
 
   constructor(private http: Http) {
   }
@@ -17,7 +17,7 @@ export class PhotoService {
   getPhotoes(): Promise<Photo[]> {
     return this.http.get(this.photosUrl)
     .toPromise()
-    .then(response => response.json() as Photo[])
+    .then(response => (response.json() as Photo[]).map(this.processPhotoLinks.bind(this)))
     .catch(this.handleError);
   }
 
@@ -26,7 +26,7 @@ export class PhotoService {
     const url = `${this.photosUrl}/${id}`;
     return this.http.get(url)
     .toPromise()
-    .then(response => response.json() as Photo)
+    .then(response => this.processPhotoLinks(response.json() as Photo))
     .catch(this.handleError);
   }
 
@@ -53,6 +53,12 @@ export class PhotoService {
     .toPromise()
     .then(() => photo)
     .catch(this.handleError);
+  }
+
+  private processPhotoLinks(photo: Photo) {
+    photo.thumbnailUrl = photo.thumbnailUrl.replace(/^http:/ig, location.protocol);
+    photo.url = photo.url.replace(/^http:/ig, location.protocol);
+    return photo;
   }
 
   private handleError(error: any): Promise<any> {

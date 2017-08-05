@@ -9,7 +9,7 @@ import {User} from '../models/user';
 export class UserService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private usersUrl = '//jsonplaceholder.typicode.com/users';
+  private usersUrl = 'https://jsonplaceholder.typicode.com/users';
 
   constructor(private http: Http) {
   }

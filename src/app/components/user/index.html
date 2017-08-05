@@ -3,12 +3,12 @@
     <md-card-header>
       <md-card-title>{{user.name}}</md-card-title>
       <md-card-subtitle class="user-list__contact-info">
-        <a class="link fa fa-envelope" target="_blank"
+        <a rel="noopener" class="link fa fa-envelope" target="_blank"
            href="mailto:{{user.email}}">{{user.email}}</a>|
-        <a class="link fa fa-mobile" target="_blank" href="{{user.phone | phoneHref}}">{{user.phone}}</a>|
-        <a class="link fa fa-globe" target="_blank"
+        <a rel="noopener" class="link fa fa-mobile" target="_blank" href="{{user.phone | phoneHref}}">{{user.phone}}</a>|
+        <a rel="noopener" class="link fa fa-globe" target="_blank"
            href="//{{user.website}}/">{{user.website}}</a><br/>
-        <a class="link fa fa-map-marker" target="_blank" href="{{user.address.geo | geoHref}}">{{user.address.zipcode}},
+        <a rel="noopener" class="link fa fa-map-marker" target="_blank" href="{{user.address.geo | geoHref}}">{{user.address.zipcode}},
           {{user.address.city}}, {{user.address.street}}, {{user.address.suite}}</a>
       </md-card-subtitle>
     </md-card-header>

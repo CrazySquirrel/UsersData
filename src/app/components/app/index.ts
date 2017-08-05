@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 
-import {MdIconRegistry} from '@angular/material';
 import {MdSnackBar} from '@angular/material';
 
 @Component({
@@ -10,9 +9,7 @@ import {MdSnackBar} from '@angular/material';
 })
 
 export class AppComponent {
-  constructor(public mdIconRegistry: MdIconRegistry,
-              public snackBar: MdSnackBar) {
-    mdIconRegistry.registerFontClassAlias('fontawesome', 'fa');
+  constructor(public snackBar: MdSnackBar) {
     if (!navigator.onLine) {
       this.snackBar.open('Offline mode');
     }

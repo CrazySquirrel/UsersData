@@ -1,6 +1,4 @@
-@import '~//fonts.googleapis.com/css?family=Roboto';
-@import '~//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
-@import '../node_modules/material-design-icons/iconfont/material-icons.css';
+
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 html, body {
@@ -11,7 +9,7 @@ html, body {
 body {
   margin: 0;
   background: lightgray;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   line-height: 1.4;
 }
 

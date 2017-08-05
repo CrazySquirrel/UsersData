@@ -19,14 +19,11 @@
 
 - [x] Create search page
 
-- [x] Add offline support
+- [x] Lighthouse optimization
+
+- [ ] SEO optimization
 
 - [ ] Add share support
-
-- [ ] Add wai-aria support
-
-- [ ] Add posts
-  - [ ] Add comments
 
 - [ ] Add sentry
 
@@ -36,9 +33,5 @@
 - [ ] Add e2e tests
 
 - [ ] Add server and full REST support
-
-- [ ] Add rendering optimization
-
-- [ ] Add application support
 
 - [ ] Add CI support
