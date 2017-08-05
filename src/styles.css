@@ -1,1 +1,99 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~//fonts.googleapis.com/css?family=Roboto';
+@import '~//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+@import '../node_modules/material-design-icons/iconfont/material-icons.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: lightgray;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+.app {
+  min-height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  position: relative;
+}
+
+.app a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.box {
+  box-sizing: border-box;
+  padding: 0 24px;
+}
+
+.debox {
+  margin: 0 -24px;
+}
+
+.link {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color .2s;
+}
+
+.link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  background: darkcyan;
+  transition: width .2s, left .2s;
+}
+
+.link:hover {
+  color: darkcyan;
+}
+
+.link:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+.mat-spinner {
+  margin: 0 auto;
+}
+
+.user-list__contact-info {
+  line-height: 1.6;
+  margin: 0 0 0 -0.25em;
+}
+
+.user-list__contact-info a {
+  margin: 0 .5em 0 0;
+}
+
+.user-list__contact-info a::before {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.54);
+  width: 1.5em;
+  text-align: center;
+  vertical-align: text-bottom;
+}
+
+.user-list__contact-info a::after {
+  margin: 0 0 0 1.5em;
+}

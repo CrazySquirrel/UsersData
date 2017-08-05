@@ -1,0 +1,24 @@
+@import "../../../../node_modules/compass-mixins/lib/compass/css3";
+
+:host {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+img:nth-child(1) {
+  position: relative;
+}
+
+@for $i from 2 through 10 {
+  img:nth-child(#{$i}) {
+    @include transform(rotate((($i - 1 )* 2) + deg));
+  }
+}

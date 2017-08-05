@@ -1,0 +1,5 @@
+<ng-container *ngIf="!preloader">
+  <img *ngFor="let photo of photos" src={{photo.thumbnailUrl}}>
+</ng-container>
+
+<md-spinner *ngIf="preloader"></md-spinner>

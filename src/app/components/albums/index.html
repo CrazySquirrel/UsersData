@@ -1,0 +1,23 @@
+<ng-container *ngIf="!preloader && pageEvent.length>0">
+  <div class="box">
+    <md-input-container class="full-width" *ngIf="!isParentSearch">
+      <input mdInput name="search" placeholder="Search" value="" [(ngModel)]="search"
+             (keyup)="doSearch()">
+    </md-input-container>
+
+    <div class="albums">
+      <figure *ngFor="let album of filtredAlbums" class="albums__item" (click)="goToDetail(album)">
+        <photos-in-album [albumID]="album.id"></photos-in-album>
+        <figcaption><span>{{album.title}}</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <md-paginator [length]="pageEvent.length"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions"
+                (page)="doPagination($event)">
+  </md-paginator>
+</ng-container>
+
+<md-spinner *ngIf="preloader"></md-spinner>
