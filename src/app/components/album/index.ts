@@ -98,7 +98,7 @@ export class AlbumComponent implements OnInit {
 
       return album;
     }).catch(() => {
-      this.preloader = false;
+      this.preloader = true;
     });
   }
 }

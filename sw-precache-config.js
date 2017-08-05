@@ -15,5 +15,15 @@ module.exports = {
     'dist/**.woff',
     'dist/**.woff2',
     'dist/**.eot'
+  ],
+  runtimeCaching: [
+    {
+      urlPattern: /jsonplaceholder\.typicode\.com/,
+      handler: 'fastest'
+    },
+    {
+      urlPattern: /placehold\.it/,
+      handler: 'fastest'
+    }
   ]
 };

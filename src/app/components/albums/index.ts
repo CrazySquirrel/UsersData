@@ -133,7 +133,7 @@ export class AlbumsComponent implements OnInit {
       this.preloader = false;
       return albums;
     }).catch(() => {
-      this.preloader = false;
+      this.preloader = true;
     });
   }
 

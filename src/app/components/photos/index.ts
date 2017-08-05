@@ -136,7 +136,7 @@ export class PhotosComponent implements OnInit {
       this.preloader = false;
       return photos;
     }).catch(() => {
-      this.preloader = false;
+      this.preloader = true;
     });
   }
 

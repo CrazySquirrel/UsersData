@@ -98,7 +98,7 @@ export class UserComponent implements OnInit {
 
       return user;
     }).catch(() => {
-      this.preloader = false;
+      this.preloader = true;
     });
   }
 }

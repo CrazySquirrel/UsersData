@@ -2,7 +2,6 @@
 
 - [x] Create a page with a list of all users
   - [x] Add search
-  - [ ] Add advanced search
   - [x] Add pagination
   
 - [x] Create user detail page
@@ -20,7 +19,7 @@
 
 - [x] Create search page
 
-- [ ] Add offline support
+- [x] Add offline support
 
 - [ ] Add share support
 
