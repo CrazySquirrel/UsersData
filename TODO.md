@@ -4,14 +4,19 @@
   - [x] Add search
   - [ ] Add advanced search
   - [x] Add pagination
+  
 - [ ] Create user detail page
   - [ ] Add block with albums/photos
   
-- [ ] Create albums list
+- [X] Create albums list
+  - [x] Add search
+  - [x] Add pagination
+  
 - [ ] Create album detail page
 
-- [ ] Create photos list
-- [ ] Create photo detail page
+- [x] Create photos list
+  - [x] Add search
+  - [x] Add pagination
 
 - [ ] Create search page
 

@@ -12,7 +12,7 @@ import {Search} from '../../additional/search';
 @Component({
   selector: 'users',
   templateUrl: './index.html',
-  styleUrls: ['./index.css']
+  styleUrls: ['./index.scss']
 })
 
 export class UsersComponent implements OnInit {
@@ -35,8 +35,8 @@ export class UsersComponent implements OnInit {
   /**
    * Pagination size and pagination size options
    */
-  public pageSize = 5;
-  public pageSizeOptions: number[] = [1, 5, 10, 20, 50, 100];
+  public pageSize = 6;
+  public pageSizeOptions: number[] = [6, 12, 24, 48, 96];
 
   /**
    * Pagination object
@@ -54,7 +54,7 @@ export class UsersComponent implements OnInit {
   public onLine: boolean;
 
   /**
-   * User constructor
+   * Users constructor
    * @param userService
    * @param router
    * @param location

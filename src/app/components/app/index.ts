@@ -5,7 +5,7 @@ import {MdIconRegistry} from '@angular/material';
 @Component({
   selector: 'app-root',
   templateUrl: './index.html',
-  styleUrls: ['./index.css']
+  styleUrls: ['./index.scss']
 })
 export class AppComponent {
   constructor(public mdIconRegistry: MdIconRegistry) {

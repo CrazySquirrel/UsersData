@@ -1,2 +1,24 @@
+<ng-container *ngIf="!preloader">
+  <md-card>
+    <md-card-header>
+      <md-card-title (click)="goToDetail(user)" class="link">{{user.name}}</md-card-title>
+      <md-card-subtitle class="user-list__contact-info">
+        <a class="link fa fa-envelope" target="_blank"
+           href="mailto:{{user.email}}">{{user.email}}</a>|
+        <a class="link fa fa-mobile" target="_blank" href="{{user.phone | phoneHref}}">{{user.phone}}</a>|
+        <a class="link fa fa-globe" target="_blank"
+           href="//{{user.website}}/">{{user.website}}</a><br/>
+        <a class="link fa fa-map-marker" target="_blank" href="{{user.address.geo | geoHref}}">{{user.address.zipcode}},
+          {{user.address.city}}, {{user.address.street}}, {{user.address.suite}}</a>
+      </md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
 
+    </md-card-content>
+    <md-card-actions>
+      <button data-class="back" md-button (click)="goBack()">Back</button>
+    </md-card-actions>
+  </md-card>
+</ng-container>
 
+<md-spinner *ngIf="preloader"></md-spinner>

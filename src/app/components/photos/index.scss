@@ -1,0 +1,40 @@
+.photos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.photos__item {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  flex: auto;
+  width: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.photos__item img {
+  width: 100%;
+}
+
+.photos__item figcaption {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, .5);
+  padding: 1em;
+  font-size: 12px;
+  line-height: 1.5;
+  height: 5em;
+  overflow: hidden;
+}
+
+.photos__item figcaption span {
+  height: 100%;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+}

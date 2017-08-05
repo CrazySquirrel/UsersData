@@ -1,2 +1,23 @@
+<ng-container *ngIf="!preloader">
+  <div class="box">
+    <md-input-container class="full-width">
+      <input mdInput name="search" placeholder="Search" value="" [(ngModel)]="search"
+             (keyup)="doSearch()">
+    </md-input-container>
 
+    <div class="photos">
+      <figure *ngFor="let photo of filtredPhotos" class="photos__item" (click)="openDialog(photo)">
+        <img md-card-image src="{{photo.thumbnailUrl}}">
+        <figcaption><span>{{photo.title}}</span></figcaption>
+      </figure>
+    </div>
+  </div>
 
+  <md-paginator [length]="pageEvent.length"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions"
+                (page)="doPagination($event)">
+  </md-paginator>
+</ng-container>
+
+<md-spinner *ngIf="preloader"></md-spinner>

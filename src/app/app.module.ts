@@ -21,6 +21,8 @@ import {GeoHrefPipe} from './pipes/geoHref';
  * Services
  */
 import {UserService} from './services/user.service';
+import {AlbumService} from './services/album.service';
+import {PhotoService} from './services/photo.service';
 
 /**
  * Components
@@ -34,7 +36,8 @@ import {AlbumsComponent} from './components/albums';
 import {AlbumComponent} from './components/album';
 
 import {PhotosComponent} from './components/photos';
-import {PhotoComponent} from './components/photo';
+import {PhotoPreviewDialog} from './components/photo-preview';
+import {PhotosInAlbumComponent} from './components/photos-in-album';
 
 import {SearchComponent} from './components/search';
 
@@ -54,7 +57,8 @@ import {Page404} from './views/page-404';
     AlbumComponent,
 
     PhotosComponent,
-    PhotoComponent,
+    PhotoPreviewDialog,
+    PhotosInAlbumComponent,
 
     SearchComponent,
 
@@ -62,6 +66,9 @@ import {Page404} from './views/page-404';
 
     PhoneHrefPipe,
     GeoHrefPipe
+  ],
+  entryComponents: [
+    PhotoPreviewDialog
   ],
   imports: [
     BrowserModule,
@@ -76,6 +83,8 @@ import {Page404} from './views/page-404';
   ],
   providers: [
     UserService,
+    AlbumService,
+    PhotoService,
     MdIconRegistry
   ],
   bootstrap: [

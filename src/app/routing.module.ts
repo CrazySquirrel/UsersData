@@ -11,7 +11,6 @@ import {AlbumsComponent} from './components/albums';
 import {AlbumComponent} from './components/album';
 
 import {PhotosComponent} from './components/photos';
-import {PhotoComponent} from './components/photo';
 
 import {SearchComponent} from './components/search';
 
@@ -30,7 +29,6 @@ const routes: Routes = [
   {path: 'album/:id', component: AlbumComponent},
 
   {path: 'photos', component: PhotosComponent},
-  {path: 'photo/:id', component: PhotoComponent},
 
   {path: 'search', component: SearchComponent},
 
