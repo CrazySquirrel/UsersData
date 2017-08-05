@@ -1,6 +1,9 @@
 # UsersData
 
-- [ ] Create a page with a list of all users
+- [x] Create a page with a list of all users
+  - [x] Add search
+  - [ ] Add advanced search
+  - [x] Add pagination
 - [ ] Create user detail page
   - [ ] Add block with albums/photos
   

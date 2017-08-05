@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
+import {MdIconRegistry} from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./index.css']
 })
 export class AppComponent {
-  title = 'app';
+  constructor(public mdIconRegistry: MdIconRegistry) {
+    mdIconRegistry.registerFontClassAlias('fontawesome', 'fa');
+  }
 }

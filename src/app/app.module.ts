@@ -5,11 +5,17 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
-import {MaterialModule} from '@angular/material';
+import {MaterialModule, MdIconRegistry} from '@angular/material';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {RoutingModule} from './routing.module';
+
+/**
+ * Pipes
+ */
+import {PhoneHrefPipe} from './pipes/phoneHref';
+import {GeoHrefPipe} from './pipes/geoHref';
 
 /**
  * Services
@@ -52,7 +58,10 @@ import {Page404} from './views/page-404';
 
     SearchComponent,
 
-    Page404
+    Page404,
+
+    PhoneHrefPipe,
+    GeoHrefPipe
   ],
   imports: [
     BrowserModule,
@@ -66,7 +75,8 @@ import {Page404} from './views/page-404';
     RoutingModule
   ],
   providers: [
-    UserService
+    UserService,
+    MdIconRegistry
   ],
   bootstrap: [
     AppComponent

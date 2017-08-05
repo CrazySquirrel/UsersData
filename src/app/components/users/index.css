@@ -1,0 +1,20 @@
+.user-list__contact-info {
+  line-height: 1.6;
+  margin: 0 0 0 -0.25em;
+}
+
+.user-list__contact-info a {
+  margin: 0 .5em 0 0;
+}
+
+.user-list__contact-info a::before {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.54);
+  width: 1.5em;
+  text-align: center;
+  vertical-align: text-bottom;
+}
+
+.user-list__contact-info a::after {
+  margin: 0 0 0 1.5em;
+}
