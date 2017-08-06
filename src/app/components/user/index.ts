@@ -5,7 +5,7 @@ import {Location} from '@angular/common';
 import {Component} from '@angular/core';
 
 import {User} from '../../models/user';
-import {UserService} from '../../services/user.service';
+import {UserService} from '../../services/user/index';
 
 @Component({
   selector: 'user',
@@ -51,9 +51,14 @@ export class UserComponent implements OnInit {
   /**
    * Init event
    */
-  public ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.getUser(+params['id']).catch(this.goToUsersList.bind(this));
+  public ngOnInit(): Promise<User> {
+    return new Promise((resolve, reject) => {
+      this.route.params.subscribe(params => {
+        this.getUser(+params['id']).then(resolve).catch((e) => {
+          reject(e);
+          this.goToUsersList.bind(this);
+        });
+      });
     });
   }
 
@@ -98,7 +103,7 @@ export class UserComponent implements OnInit {
 
       return user;
     }).catch(() => {
-      this.preloader = false;
+      this.preloader = true;
     });
   }
 }

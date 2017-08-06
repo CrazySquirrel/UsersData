@@ -1,5 +1,5 @@
-<ng-container *ngIf="!preloader">
+<div *ngIf="!preloader" data-unit-test="photos-in-album">
   <img *ngFor="let photo of photos" src={{photo.thumbnailUrl}}>
-</ng-container>
+</div>
 
 <md-spinner *ngIf="preloader"></md-spinner>

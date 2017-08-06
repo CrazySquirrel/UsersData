@@ -5,7 +5,7 @@ import {Location} from '@angular/common';
 import {Component} from '@angular/core';
 
 import {Album} from '../../models/album';
-import {AlbumService} from '../../services/album.service';
+import {AlbumService} from '../../services/album/index';
 
 @Component({
   selector: 'album',
@@ -51,9 +51,14 @@ export class AlbumComponent implements OnInit {
   /**
    * Init event
    */
-  public ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.getAlbum(+params['id']).catch(this.goToAlbumsList.bind(this));
+  public ngOnInit(): Promise<Album> {
+    return new Promise((resolve, reject) => {
+      this.route.params.subscribe(params => {
+        this.getAlbum(+params['id']).then(resolve).catch((e) => {
+          reject(e);
+          this.goToAlbumsList.bind(this);
+        });
+      });
     });
   }
 
@@ -98,7 +103,7 @@ export class AlbumComponent implements OnInit {
 
       return album;
     }).catch(() => {
-      this.preloader = false;
+      this.preloader = true;
     });
   }
 }

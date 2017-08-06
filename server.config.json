@@ -1,0 +1,34 @@
+{
+  "apps": [
+    {
+      "name": "User Data Development",
+      "script": "./server.js",
+      "node_args": [
+        "--inspect",
+        "--debug"
+      ],
+      "instances": "1",
+      "exec_mode": "cluster",
+      "watch": false,
+      "cwd": ".",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "development": {
+        "NODE_ENV": "development",
+        "ROOT": "/Users/yastrebov-sergey/Documents/Project/UsersData/",
+        "STATIC": "/Users/yastrebov-sergey/Documents/Project/UsersData/dist",
+        "SENTRY": {
+          "JS": "https://030ed54b442b407ab0c6982c11b7cf46@sentry.io/142057",
+          "NODE": "https://030ed54b442b407ab0c6982c11b7cf46:2db47b2cf8d3474c8478faa5ca6c46d2@sentry.io/142057"
+        },
+        "PORT": 7000
+      },
+      "error_file": "err.log",
+      "out_file": "out.log",
+      "merge_logs": true,
+      "log_type": "json",
+      "log_date_format": "YYYY-MM-DD HH:mm Z"
+    }
+  ]
+}

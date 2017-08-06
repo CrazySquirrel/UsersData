@@ -1,6 +1,6 @@
 <div class="box">
   <md-input-container class="full-width">
-    <input mdInput name="search" placeholder="Search" value="" [(ngModel)]="search"
+    <input data-unit-test="search-input" mdInput name="search" placeholder="Search" value="" [(ngModel)]="search"
            (keyup)="users.doSearch();albums.doSearch();photos.doSearch();">
   </md-input-container>
 </div>

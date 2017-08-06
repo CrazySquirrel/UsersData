@@ -5,7 +5,7 @@ import {Location} from '@angular/common';
 import {Component} from '@angular/core';
 
 import {Photo} from '../../models/photo';
-import {PhotoService} from '../../services/photo.service';
+import {PhotoService} from '../../services/photo/index';
 
 import {Search} from '../../additional/search';
 
@@ -84,8 +84,8 @@ export class PhotosComponent implements OnInit {
   /**
    * Init event
    */
-  public ngOnInit(): void {
-    this.getPhotos();
+  public ngOnInit(): Promise<Photo[]> {
+    return this.getPhotos();
   }
 
   /****************************************************
@@ -128,7 +128,7 @@ export class PhotosComponent implements OnInit {
    */
   private getPhotos(): Promise<Photo[]> {
     this.preloader = true;
-    return this.photoService.getPhotoes()
+    return this.photoService.getPhotos()
     .then(photos => {
       photos = photos.filter((photo) => !this.albumID || photo.albumId === this.albumID);
       this.allPhotos = photos;
@@ -136,7 +136,7 @@ export class PhotosComponent implements OnInit {
       this.preloader = false;
       return photos;
     }).catch(() => {
-      this.preloader = false;
+      this.preloader = true;
     });
   }
 

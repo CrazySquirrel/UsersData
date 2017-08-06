@@ -1,23 +1,30 @@
-<ng-container *ngIf="!preloader && pageEvent.length>0">
+<ng-container *ngIf="!preloader">
   <div class="box">
-    <md-input-container class="full-width"  *ngIf="!isParentSearch">
-      <input mdInput name="search" placeholder="Search" value="" [(ngModel)]="search"
+    <md-input-container class="full-width" *ngIf="!isParentSearch">
+      <input data-unit-test="photos-search-input" mdInput name="search" placeholder="Search"
+             value="" [(ngModel)]="search"
              (keyup)="doSearch()">
     </md-input-container>
 
-    <div class="photos">
-      <figure *ngFor="let photo of filtredPhotos" class="photos__item" (click)="openDialog(photo)">
-        <img md-card-image src="{{photo.thumbnailUrl}}">
-        <figcaption><span>{{photo.title}}</span></figcaption>
-      </figure>
-    </div>
+    <ng-container *ngIf="pageEvent.length>0">
+      <div class="photos" data-unit-test="photos">
+        <figure *ngFor="let photo of filtredPhotos" class="photos__item"
+                data-unit-test="photos-item"
+                (click)="openDialog(photo)">
+          <img data-unit-test="photos-item-picture" md-card-image src="{{photo.thumbnailUrl}}">
+          <figcaption data-unit-test="photos-item-title"><span>{{photo.title}}</span></figcaption>
+        </figure>
+      </div>
+    </ng-container>
   </div>
 
-  <md-paginator [length]="pageEvent.length"
-                [pageSize]="pageSize"
-                [pageSizeOptions]="pageSizeOptions"
-                (page)="doPagination($event)">
-  </md-paginator>
+  <ng-container *ngIf="pageEvent.length>0">
+    <md-paginator data-unit-test="photos-pagination" [length]="pageEvent.length"
+                  [pageSize]="pageSize"
+                  [pageSizeOptions]="pageSizeOptions"
+                  (page)="doPagination($event)">
+    </md-paginator>
+  </ng-container>
 </ng-container>
 
 <md-spinner *ngIf="preloader"></md-spinner>

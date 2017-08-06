@@ -5,7 +5,7 @@ import {Location} from '@angular/common';
 import {Component} from '@angular/core';
 
 import {Photo} from '../../models/photo';
-import {PhotoService} from '../../services/photo.service';
+import {PhotoService} from '../../services/photo/index';
 
 @Component({
   selector: 'photos-in-album',
@@ -50,8 +50,8 @@ export class PhotosInAlbumComponent implements OnInit {
   /**
    * Init event
    */
-  public ngOnInit(): void {
-    this.getPhotos();
+  public ngOnInit(): Promise<Photo[]> {
+    return this.getPhotos();
   }
 
   /****************************************************
@@ -63,14 +63,14 @@ export class PhotosInAlbumComponent implements OnInit {
    */
   private getPhotos(): Promise<Photo[]> {
     this.preloader = true;
-    return this.photoService.getPhotoes()
+    return this.photoService.getPhotos()
     .then(photos => {
       photos = photos.filter((photo) => photo.albumId === this.albumID);
       this.photos = photos.slice(0, 3);
       this.preloader = false;
       return photos;
     }).catch(() => {
-      this.preloader = false;
+      this.preloader = true;
     });
   }
 }

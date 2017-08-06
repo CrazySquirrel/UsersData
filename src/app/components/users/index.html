@@ -1,33 +1,43 @@
-<ng-container *ngIf="!preloader && pageEvent.length>0">
+<ng-container *ngIf="!preloader">
   <div class="box" *ngIf="!isParentSearch">
     <md-input-container class="full-width">
-      <input mdInput name="search" placeholder="Search" value="" [(ngModel)]="search"
+      <input data-unit-test="users-search-input" mdInput name="search" placeholder="Search" value=""
+             [(ngModel)]="search"
              (keyup)="doSearch()">
     </md-input-container>
   </div>
 
-  <md-card *ngFor="let user of filtredUsers">
-    <md-card-header>
-      <md-card-title (click)="goToDetail(user)" class="link">{{user.name}}</md-card-title>
-      <md-card-subtitle class="user-list__contact-info">
-        <a class="link fa fa-envelope" target="_blank"
-           href="mailto:{{user.email}}">{{user.email}}</a>|
-        <a class="link fa fa-mobile" target="_blank" href="{{user.phone | phoneHref}}">{{user.phone}}</a>|
-        <a class="link fa fa-globe" target="_blank"
-           href="//{{user.website}}/">{{user.website}}</a><br/>
-        <a class="link fa fa-map-marker" target="_blank" href="{{user.address.geo | geoHref}}">{{user.address.zipcode}},
-          {{user.address.city}}, {{user.address.street}}, {{user.address.suite}}</a>
-      </md-card-subtitle>
-    </md-card-header>
-  </md-card>
+  <ng-container *ngIf="pageEvent.length>0" data-unit-test="users">
+    <md-card *ngFor="let user of filtredUsers" data-unit-test="users-card">
+      <md-card-header>
+        <md-card-title data-unit-test="users-card-name" (click)="goToDetail(user)" class="link">
+          {{user.name}}
+        </md-card-title>
+        <md-card-subtitle class="user-list__contact-info">
+          <a data-unit-test="users-card-email" rel="noopener" class="link fa fa-envelope"
+             target="_blank"
+             href="mailto:{{user.email}}">{{user.email}}</a>|
+          <a data-unit-test="users-card-phone" rel="noopener" class="link fa fa-mobile"
+             target="_blank"
+             href="{{user.phone | phoneHref}}">{{user.phone}}</a>|
+          <a data-unit-test="users-card-website" rel="noopener" class="link fa fa-globe"
+             target="_blank"
+             href="//{{user.website}}/">{{user.website}}</a><br/>
+          <a data-unit-test="users-card-address" rel="noopener" class="link fa fa-map-marker"
+             target="_blank"
+             href="{{user.address.geo | geoHref}}">{{user.address.zipcode}},
+            {{user.address.city}}, {{user.address.street}}, {{user.address.suite}}</a>
+        </md-card-subtitle>
+      </md-card-header>
+    </md-card>
 
 
-  <md-paginator [length]="pageEvent.length"
-                [pageSize]="pageSize"
-                [pageSizeOptions]="pageSizeOptions"
-                (page)="doPagination($event)">
-  </md-paginator>
-
+    <md-paginator data-unit-test="users-pagination" [length]="pageEvent.length"
+                  [pageSize]="pageSize"
+                  [pageSizeOptions]="pageSizeOptions"
+                  (page)="doPagination($event)">
+    </md-paginator>
+  </ng-container>
 </ng-container>
 
 <md-spinner *ngIf="preloader"></md-spinner>

@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <base href="/">
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-transparent">
@@ -32,15 +32,18 @@
   <meta name="author" content="Sergey Yastrebov">
 </head>
 <body>
-  <app-root></app-root>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-        console.log('Service Worker registered');
-      }).catch(function(err) {
-        console.log('Service Worker registration failed: ', err);
-      });
-    }
-  </script>
+<app-root></app-root>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+      console.log('Service Worker registered');
+    }).catch(function (err) {
+      console.log('Service Worker registration failed: ', err);
+    });
+  }
+</script>
+<noscript>If you're seeing this message, that means <strong>JavaScript has been disabled on your
+  browser</strong>, please <strong>enable JS</strong> to make this app work.
+</noscript>
 </body>
 </html>
