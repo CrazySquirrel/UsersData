@@ -11,6 +11,7 @@
     "e2e": "ng e2e",
     "sw": "sw-precache --root=dist --config=sw-precache-config.js",
     "build:prod": "ng build --prod && npm run sw",
+    "static-serve": "cd dist && live-server --port=7990 --host=localhost --entry-file=/index.html",
     "commit": "git-cz -a",
     "release": "standard-version && git push origin master --tags"
   },
@@ -56,6 +57,8 @@
     "@commitlint/cli": "^3.0.4",
     "@commitlint/config-angular": "^3.0.4",
     "@types/jasmine": "~2.5.53",
+    "@types/jasmine-expect": "^3.6.1",
+    "@types/jasmine-matchers": "^0.2.30",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.0.1",

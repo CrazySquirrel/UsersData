@@ -1,11 +1,11 @@
 <section class="app">
   <md-toolbar color="primary" role="navigation">
-    <a routerLink="/users">Users data</a>
+    <a data-unit-test="app-home-link" routerLink="/users">Users data</a>
     <span class="spacer"></span>
-    <a md-button routerLink="/users">Users</a>
-    <a md-button routerLink="/albums">Albums</a>
-    <a md-button routerLink="/photos">Photos</a>
-    <a md-icon-button routerLink="/search" aria-label="Search">
+    <a data-unit-test="app-users-link" md-button routerLink="/users">Users</a>
+    <a data-unit-test="app-albums-link" md-button routerLink="/albums">Albums</a>
+    <a data-unit-test="app-photos-link" md-button routerLink="/photos">Photos</a>
+    <a data-unit-test="app-search-link" md-icon-button routerLink="/search" aria-label="Search">
       <md-icon>search</md-icon>
     </a>
   </md-toolbar>

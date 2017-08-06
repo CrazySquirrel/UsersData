@@ -2,9 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.3.
 
+## Production server
+
+Run `npm run build:prod` and `pm2 start server.config.json` for a production server. Navigate to `https://localhost:7000/`.
+
 ## Development+ server
 
-Run `build:prod` and `static-serve` for a dev+ server. Navigate to `http://localhost:7990/`.
+Run `npm run build:prod` and `npm run static-serve` for a dev+ server. Navigate to `http://localhost:7990/`.
 
 ## Development server
 

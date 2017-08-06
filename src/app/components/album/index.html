@@ -1,15 +1,15 @@
 <ng-container *ngIf="!preloader">
   <md-card>
     <md-card-header>
-      <md-card-title>{{album.title}}</md-card-title>
+      <md-card-title data-test="album-title">{{album.title}}</md-card-title>
     </md-card-header>
     <md-card-content>
       <div class="debox">
-        <photos [albumID]="album.id"></photos>
+        <photos data-test="album-pictures" [albumID]="album.id"></photos>
       </div>
     </md-card-content>
     <md-card-actions>
-      <button data-class="back" md-button (click)="goBack()">Back</button>
+      <button data-test="album-back" data-class="back" md-button (click)="goBack()">Back</button>
     </md-card-actions>
   </md-card>
 </ng-container>

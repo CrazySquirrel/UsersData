@@ -4,20 +4,27 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular/cli'],
+    frameworks: ['jasmine', 'jasmine-matchers', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),
+      require('karma-jasmine-matchers'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('karma-scss-preprocessor'),
       require('@angular/cli/plugins/karma')
     ],
-    client:{
+    files: [
+      {pattern: './src/style.scss', included: true},
+    ],
+    preprocessors: {
+      './src/style.scss': ['scss']
+    },
+    client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' ],
+      reports: ['html', 'lcovonly'],
       fixWebpackSourcePaths: true
     },
     angularCli: {
@@ -29,6 +36,8 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: false,
     browsers: ['Chrome'],
-    singleRun: true
+    singleRun: true,
+    browserDisconnectTimeout: 600000,
+    browserNoActivityTimeout: 600000
   });
 };

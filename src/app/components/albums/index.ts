@@ -5,7 +5,7 @@ import {Location} from '@angular/common';
 import {Component} from '@angular/core';
 
 import {Album} from '../../models/album';
-import {AlbumService} from '../../services/album.service';
+import {AlbumService} from '../../services/album/index';
 
 import {Search} from '../../additional/search';
 
@@ -80,8 +80,8 @@ export class AlbumsComponent implements OnInit {
   /**
    * Init event
    */
-  public ngOnInit(): void {
-    this.getAlbums();
+  public ngOnInit(): Promise<Album[]> {
+    return this.getAlbums();
   }
 
   /****************************************************
@@ -125,7 +125,7 @@ export class AlbumsComponent implements OnInit {
    */
   private getAlbums(): Promise<Album[]> {
     this.preloader = true;
-    return this.albumService.getAlbumes()
+    return this.albumService.getAlbums()
     .then(albums => {
       albums = albums.filter((album) => !this.userID || album.userId === this.userID);
       this.allAlbums = albums;

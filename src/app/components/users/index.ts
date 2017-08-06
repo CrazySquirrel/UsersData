@@ -5,7 +5,7 @@ import {Location} from '@angular/common';
 import {Component} from '@angular/core';
 
 import {User} from '../../models/user';
-import {UserService} from '../../services/user.service';
+import {UserService} from '../../services/user/index';
 
 import {Search} from '../../additional/search';
 
@@ -79,8 +79,8 @@ export class UsersComponent implements OnInit {
   /**
    * Init event
    */
-  public ngOnInit(): void {
-    this.getUsers();
+  public ngOnInit(): Promise<User[]> {
+    return this.getUsers();
   }
 
   /****************************************************
@@ -124,7 +124,7 @@ export class UsersComponent implements OnInit {
    */
   private getUsers(): Promise<User[]> {
     this.preloader = true;
-    return this.userService.getUseres()
+    return this.userService.getUsers()
     .then(users => {
       this.allUsers = users;
       this.filter();

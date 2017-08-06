@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
 
-import {Geo} from '../models/geo';
+import {Geo} from '../../models/geo';
 
 @Pipe({name: 'geoHref'})
 export class GeoHrefPipe implements PipeTransform {

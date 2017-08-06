@@ -1,6 +1,6 @@
-import { TestBed, async } from '@angular/core/testing';
+import {TestBed, async} from '@angular/core/testing';
 
-import { Page404 } from './index';
+import {Page404} from './index';
 
 describe('Page404', () => {
   beforeEach(async(() => {

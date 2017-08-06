@@ -19,6 +19,9 @@
 
 - [x] Create search page
 
+- [x] Add unit tests
+- [ ] Add e2e tests
+
 - [x] Lighthouse optimization
 
 - [ ] SEO optimization
@@ -29,8 +32,7 @@
 
 - [ ] Add documentation
 
-- [ ] Add unit tests
-- [ ] Add e2e tests
+
 
 - [ ] Add server and full REST support
 

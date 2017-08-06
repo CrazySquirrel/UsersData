@@ -20,9 +20,9 @@ import {GeoHrefPipe} from './pipes/geoHref';
 /**
  * Services
  */
-import {UserService} from './services/user.service';
-import {AlbumService} from './services/album.service';
-import {PhotoService} from './services/photo.service';
+import {UserService} from './services/user/index';
+import {AlbumService} from './services/album/index';
+import {PhotoService} from './services/photo/index';
 
 /**
  * Components
