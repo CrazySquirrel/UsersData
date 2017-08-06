@@ -13,12 +13,12 @@
       </md-card-subtitle>
     </md-card-header>
     <md-card-content>
-      <div class="debox" data-test="user-albums">
+      <div class="debox" data-unit-test="user-albums">
         <albums [userID]="user.id"></albums>
       </div>
     </md-card-content>
     <md-card-actions>
-      <button data-test="user-back" data-class="back" md-button (click)="goBack()">Back</button>
+      <button data-unit-test="user-back" data-class="back" md-button (click)="goBack()">Back</button>
     </md-card-actions>
   </md-card>
 </ng-container>

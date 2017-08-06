@@ -20,7 +20,7 @@
 - [x] Create search page
 
 - [x] Add unit tests
-- [ ] Add e2e tests
+- [x] Add e2e tests
 
 - [x] Lighthouse optimization
 
@@ -31,8 +31,6 @@
 - [ ] Add sentry
 
 - [ ] Add documentation
-
-
 
 - [ ] Add server and full REST support
 
